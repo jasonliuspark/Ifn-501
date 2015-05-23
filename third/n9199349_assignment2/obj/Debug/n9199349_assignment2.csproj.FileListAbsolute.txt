@@ -10,3 +10,6 @@ C:\IFN 501\third\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.pdb
 C:\IFN 501\third\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.csprojResolveAssemblyReference.cache
 C:\IFN 501\third\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.exe
 C:\IFN 501\third\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.pdb
+D:\GitHub\Ifn-501\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.exe.config
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.exe
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.pdb
