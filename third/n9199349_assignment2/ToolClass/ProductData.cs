@@ -20,18 +20,16 @@ namespace n9199349_assignment2
         public ProductData(string x, double p)
         {
 
-            Console.WriteLine("input the productname");
-            x = Console.ReadLine();
+           // Console.WriteLine("input the productname");
+          
             ProductName = x;
-            Console.WriteLine("input the retailprice");
-            
-            DoubleInputArguement(out p);
+           // Console.WriteLine("input the retailprice");
             RetailPrice = p;
 
 
         }
 
-        public void DoubleInputArguement(out double p)
+       /* public void DoubleInputArguement(out double p)
         {
             while (double.TryParse(Console.ReadLine(), out p) == false)
             {
@@ -40,7 +38,7 @@ namespace n9199349_assignment2
                 continue;
             }
 
-        }
+        }*/
 
     }
 }

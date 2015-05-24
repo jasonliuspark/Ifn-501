@@ -5,12 +5,27 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{46B2487C-F833-4643-A02D-30F2C8207629}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>n9199349_assignment2</RootNamespace>
     <AssemblyName>n9199349_assignment2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +46,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,30 +62,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCata.cs">
+    <Compile Include="Forms\AddCata.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCata.Designer.cs">
+    <Compile Include="Forms\AddCata.Designer.cs">
       <DependentUpon>AddCata.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNewProduct.cs">
+    <Compile Include="Forms\AddNewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewProduct.Designer.cs">
+    <Compile Include="Forms\AddNewProduct.Designer.cs">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalculateMedian.cs">
+    <Compile Include="Forms\CalculateMedian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalculateMedian.Designer.cs">
+    <Compile Include="Forms\CalculateMedian.Designer.cs">
       <DependentUpon>CalculateMedian.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductCatalogue.cs" />
-    <Compile Include="ProductData.cs" />
-    <Compile Include="ProductInventory.cs">
+    <Compile Include="ToolClass\CataInitial.cs" />
+    <Compile Include="ToolClass\DisplayCata.cs" />
+    <Compile Include="ToolClass\input_arguments.cs" />
+    <Compile Include="ToolClass\ProductCatalogue.cs" />
+    <Compile Include="ToolClass\ProductData.cs" />
+    <Compile Include="Forms\ProductInventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductInventory.Designer.cs">
+    <Compile Include="Forms\ProductInventory.Designer.cs">
       <DependentUpon>ProductInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -76,19 +98,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddCata.resx">
+    <EmbeddedResource Include="Forms\AddCata.resx">
       <DependentUpon>AddCata.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddNewProduct.resx">
+    <EmbeddedResource Include="Forms\AddNewProduct.resx">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalculateMedian.resx">
+    <EmbeddedResource Include="Forms\CalculateMedian.resx">
       <DependentUpon>CalculateMedian.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductInventory.resx">
+    <EmbeddedResource Include="Forms\ProductInventory.resx">
       <DependentUpon>ProductInventory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -17,8 +17,8 @@ namespace n9199349_assignment2
         public ProductCatalogue(string x)
         {
             numberOfProducts = 0;
-            Console.WriteLine("please input the cataname");
-            x = Console.ReadLine();
+          
+            //x =
             catalogueName=x;
 
 
@@ -39,11 +39,9 @@ namespace n9199349_assignment2
             Console.WriteLine("--------------");
 
         }
-        public void InsertProduct()
+        public void InsertProduct(string a,double b)
         {
-            string a = "";
-            double b = 0;
-
+            
             ProductData product = new ProductData(a,b);
             products[numberOfProducts] = product;
             // products[numberOfProducts].printProduct();s

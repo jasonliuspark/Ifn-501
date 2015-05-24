@@ -13,3 +13,11 @@ C:\IFN 501\third\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.pdb
 D:\GitHub\Ifn-501\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.exe.config
 D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.exe
 D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.pdb
+D:\GitHub\Ifn-501\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.exe
+D:\GitHub\Ifn-501\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.pdb
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.csprojResolveAssemblyReference.cache
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.AddCata.resources
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.AddNewProduct.resources
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.CalculateMedian.resources
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.ProductInventory.resources
+D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.csproj.GenerateResource.Cache

@@ -48,6 +48,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "New Cata";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AddCata);
             // 
             // button2
             // 
@@ -75,6 +76,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Add Product";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.AddProduct);
             // 
             // button5
             // 
@@ -93,6 +95,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Per cata Median";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.CalculateMedian);
             // 
             // label1
             // 
