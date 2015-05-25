@@ -36,8 +36,8 @@ namespace n9199349_assignment2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProductCatalogue catalogue = new ProductCatalogue(textBox1.Text);           
-            CataInitial.catalogues[CataInitial.NumberOfCatalogue] = catalogue;
+            ProductCatalogue catalogue = new ProductCatalogue(textBox1.Text);
+            CataInitial.catalogues.Add(catalogue);
             CataInitial.NumberOfCatalogue++;
             this.Hide();
         }

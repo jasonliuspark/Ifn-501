@@ -10,7 +10,8 @@ namespace n9199349_assignment2
     {
         const int MAX_NUM_PRODUCTS = 100;
        public string catalogueName;
-        public ProductData[] products = new ProductData[MAX_NUM_PRODUCTS];
+       // public ProductData[] products = new ProductData[MAX_NUM_PRODUCTS];
+       public List<ProductData> products = new List<ProductData>();
         public int numberOfProducts;
 
 
@@ -43,7 +44,7 @@ namespace n9199349_assignment2
         {
             
             ProductData product = new ProductData(a,b);
-            products[numberOfProducts] = product;
+            products.Add(product);
             // products[numberOfProducts].printProduct();s
             numberOfProducts++;
         }

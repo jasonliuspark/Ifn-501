@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\CataInitial.datasource" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\AddCata.resx">
