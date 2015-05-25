@@ -104,7 +104,8 @@ namespace n9199349_assignment2
             dt.Columns.Add(col1);
             dt.Columns.Add(col2);
             this.dataGridView1.DataSource = dt;
-
+         if(listBox1.SelectedIndex!=-1)
+         {
             for (int i = 0; i < CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts; i++)
             {
                 DataRow row = dt.NewRow();
@@ -116,6 +117,7 @@ namespace n9199349_assignment2
                 //CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
 
             }
+         }
 
         }
 
@@ -135,13 +137,24 @@ namespace n9199349_assignment2
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (this.dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                DataRowView drv = dataGridView1.SelectedRows[0].DataBoundItem as DataRowView;
-                drv.Delete();                   
+                CataInitial.catalogues[listBox1.SelectedIndex].products.RemoveAt(dataGridView1.CurrentRow.Index);
+
+                if (CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts > 0)
+                {
+                    CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts--;
+                }
             }
-            
-            CataInitial.catalogues[listBox1.SelectedIndex].products.RemoveAt(dataGridView1.CurrentRow.Index);
+            catch { }
+            if (this.dataGridView1.SelectedRows.Count > 0)
+            { 
+                //MessageBox.Show(dataGridView1.CurrentRow.Index.ToString());
+                DataRowView drv = dataGridView1.SelectedRows[0].DataBoundItem as DataRowView;
+                drv.Delete();     
+              
+            }
+           
         }
 
         private void button9_Click(object sender, EventArgs e)
