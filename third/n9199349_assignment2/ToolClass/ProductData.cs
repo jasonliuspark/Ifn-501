@@ -14,7 +14,7 @@ namespace n9199349_assignment2
 
         public void printProduct()
         {
-            Console.WriteLine("{0} retail price is {1}", ProductName, RetailPrice);
+            //Console.WriteLine("{0} retail price is {1}", ProductName, RetailPrice);
 
         }
         public ProductData(string x, double p)

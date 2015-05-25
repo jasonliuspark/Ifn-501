@@ -40,6 +40,11 @@ namespace n9199349_assignment2
             CataInitial.catalogues[CataInitial.NumberOfCatalogue] = catalogue;
             CataInitial.NumberOfCatalogue++;
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         } 
     }
 }

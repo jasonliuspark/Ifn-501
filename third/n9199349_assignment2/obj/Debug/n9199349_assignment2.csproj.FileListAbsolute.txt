@@ -24,3 +24,14 @@ D:\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.cspr
 C:\Users\JasonLiu\Documents\GitHub\Ifn-501\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.exe.config
 C:\Users\JasonLiu\Documents\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.exe
 C:\Users\JasonLiu\Documents\GitHub\Ifn-501\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.pdb
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.exe.config
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.exe
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.pdb
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.exe
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\bin\Debug\n9199349_assignment2.pdb
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.csprojResolveAssemblyReference.cache
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.AddCata.resources
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.AddNewProduct.resources
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.CalculateMedian.resources
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.ProductInventory.resources
+C:\Users\JasonLiu\Desktop\third\n9199349_assignment2\obj\Debug\n9199349_assignment2.csproj.GenerateResource.Cache

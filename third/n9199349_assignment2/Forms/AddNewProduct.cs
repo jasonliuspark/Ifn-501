@@ -39,7 +39,7 @@ namespace n9199349_assignment2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +47,7 @@ namespace n9199349_assignment2
             double  p;
             input_arguments.DoubleInputArguement(textBox2.Text,out p);
             CataInitial.catalogues[comboBox1.SelectedIndex].InsertProduct(textBox1.Text,p);
+            this.Hide();
 
         }
 

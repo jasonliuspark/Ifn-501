@@ -18,10 +18,10 @@ namespace n9199349_assignment2
         {
             InitializeComponent();
         }
-
+   
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void AddCata(object sender, EventArgs e)
@@ -51,6 +51,47 @@ namespace n9199349_assignment2
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            for (int i = 0; i < CataInitial.NumberOfCatalogue; i++)
+            {
+                listBox1.Items.Add(CataInitial.catalogues[i].catalogueName);
+
+            }
+
+            
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            if (listBox1.SelectedIndex!= -1)
+            {
+                for (int i = 0; i < CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts; i++)
+                {
+                    listBox2.Items.Add
+                        (
+                         productdetails_transfer.transfer
+                        (
+                        i + 1,
+                        CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName,
+                        CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice
+                        )
+                        );
+                    //CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
+
+
+                }
+            }
+
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
