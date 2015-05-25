@@ -107,10 +107,12 @@ namespace n9199349_assignment2
 
             for (int i = 0; i < CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts; i++)
             {
-
-                dt.Rows.Add("{0}", "{1}", CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName,
-                    CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
-
+                DataRow row = dt.NewRow();
+                row["Product name"] = CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName;
+                row["Retail price"] = CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice;
+               // dt.Rows.Add("{0}", "{1}", CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName,
+                 //   CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
+                dt.Rows.Add(row);
                 //CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
 
             }
@@ -154,6 +156,12 @@ namespace n9199349_assignment2
 
                 }
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
         }
     }
 }
