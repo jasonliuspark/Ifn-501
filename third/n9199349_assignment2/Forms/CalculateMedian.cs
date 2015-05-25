@@ -15,6 +15,7 @@ namespace n9199349_assignment2
         public CalculateMedian()
         {
             InitializeComponent();
+
         }
 
 
@@ -66,5 +67,13 @@ namespace n9199349_assignment2
 
         }
 
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        private void CalculateMedian_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
