@@ -14,12 +14,13 @@ namespace n9199349_assignment2
 
     public partial class ProductInventory : Form
     {
-        
+       
         public ProductInventory()
-        {
+        { 
+           
             InitializeComponent();
 
-      
+         
 
         }
 
@@ -52,6 +53,7 @@ namespace n9199349_assignment2
         private void AddCata(object sender, EventArgs e)
         {
            AddCata addcata=new AddCata();
+           addcata.FatherRefresh = this.refreshCata;
            if (addcata.ShowDialog() == DialogResult.OK)
            { this.Show(); }
 
@@ -60,6 +62,7 @@ namespace n9199349_assignment2
         private void AddProduct(object sender, EventArgs e)
         {
             AddNewProduct addproduct = new AddNewProduct();
+          
             if (addproduct.ShowDialog() == DialogResult.OK)
             { this.Show(); }
             
@@ -94,6 +97,20 @@ namespace n9199349_assignment2
 
             
         }
+        public void refreshCata()
+        {
+
+            listBox1.Items.Clear();
+            if (CataInitial.NumberOfCatalogue != 0)
+            {
+                for (int i = 0; i < CataInitial.NumberOfCatalogue; i++)
+                {
+                    listBox1.Items.Add(CataInitial.catalogues[i].catalogueName);
+
+                }
+            }
+        
+        }
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -104,18 +121,23 @@ namespace n9199349_assignment2
             dt.Columns.Add(col1);
             dt.Columns.Add(col2);
             this.dataGridView1.DataSource = dt;
-
-            for (int i = 0; i < CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts; i++)
+            if (listBox1.SelectedIndex != -1)
             {
+                for (int i = 0; i < CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts; i++)
+                {
+                    try
+                    {
+                        dt.Rows.Add("{0}", "{1}", CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName,
+                            CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
+                    }
+                    catch { }
+                    //CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
 
-                dt.Rows.Add("{0}", "{1}", CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName,
-                    CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
-
-                //CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
-
+                }
             }
 
         }
+       
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {

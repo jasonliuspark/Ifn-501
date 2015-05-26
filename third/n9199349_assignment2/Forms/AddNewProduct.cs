@@ -12,6 +12,8 @@ namespace n9199349_assignment2
 {
     public partial class AddNewProduct : Form
     {
+
+        
         public AddNewProduct()
         {
             InitializeComponent();
@@ -47,6 +49,7 @@ namespace n9199349_assignment2
             double  p;
             input_arguments.DoubleInputArguement(textBox2.Text,out p);
             CataInitial.catalogues[comboBox1.SelectedIndex].InsertProduct(textBox1.Text,p);
+           
             this.Hide();
 
         }

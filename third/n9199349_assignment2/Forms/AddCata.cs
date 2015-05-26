@@ -10,9 +10,14 @@ using System.Windows.Forms;
 
 namespace n9199349_assignment2
 {
+      
+
+       
+
     public partial class AddCata : Form
     {
-        
+           public delegate void DoAction();
+           public DoAction FatherRefresh;
         public AddCata()
         {
             InitializeComponent();          
@@ -39,7 +44,10 @@ namespace n9199349_assignment2
             ProductCatalogue catalogue = new ProductCatalogue(textBox1.Text);
             CataInitial.catalogues.Add(catalogue);
             CataInitial.NumberOfCatalogue++;
+            FatherRefresh();
             this.Hide();
+            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
