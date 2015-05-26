@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace n9199349_assignment2
 {
@@ -21,11 +23,17 @@ namespace n9199349_assignment2
         {
 
            // Console.WriteLine("input the productname");
-          
-            ProductName = x;
-           // Console.WriteLine("input the retailprice");
-            RetailPrice = p;
+            try
+            {
+                ProductName = x;
+                // Console.WriteLine("input the retailprice");
+                RetailPrice = p;
+            }
+            catch {
 
+                MessageBox.Show(" please in put right infomation");
+                
+            }
 
         }
 

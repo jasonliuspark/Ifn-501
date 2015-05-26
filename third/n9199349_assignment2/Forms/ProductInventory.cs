@@ -19,29 +19,26 @@ namespace n9199349_assignment2
         { 
            
             InitializeComponent();
-
+            this.listBox1.MouseDoubleClick += new MouseEventHandler(Mouse_DoubleClick);
          
 
+        }
+        public void Mouse_DoubleClick(object sender,MouseEventArgs e)
+        {
+            int index = this.listBox1.IndexFromPoint(e.Location);
+            if (index!=System.Windows.Forms.ListBox.NoMatches)
+            {
+               // MessageBox.Show(index.ToString());
+
+                ProductRefresh(listBox1.SelectedIndex);
+            
+            }
+        
         }
 
         public void DataGrid_initial()
         {
-            /*
-                 DataTable dt = new DataTable();
-            DataColumn col1 = new DataColumn("Product name", typeof(string));
-            DataColumn col2 = new DataColumn("Retail price", typeof(double));
-            dt.Columns.Add(col1);
-            dt.Columns.Add(col2);
-            this.dataGridView1.DataSource = dt;
-            for (int i = 0; i < CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts; i++)
-            {
-
-                dt.Rows.Add("{0}", "{1}", CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName, 
-                    CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
-                
-                //CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
-
-            }*/
+           
         
         
         }
@@ -61,8 +58,9 @@ namespace n9199349_assignment2
 
         private void AddProduct(object sender, EventArgs e)
         {
+           int x;
             AddNewProduct addproduct = new AddNewProduct();
-          
+            addproduct.refresh = this.ProductRefresh;
             if (addproduct.ShowDialog() == DialogResult.OK)
             { this.Show(); }
             
@@ -97,6 +95,7 @@ namespace n9199349_assignment2
 
             
         }
+       
         public void refreshCata()
         {
 
@@ -115,29 +114,39 @@ namespace n9199349_assignment2
         private void button7_Click(object sender, EventArgs e)
         {
             
+           ProductRefresh(listBox1.SelectedIndex);
+
+        }
+        public void ProductRefresh(int x)
+        {
+            
             DataTable dt = new DataTable();
             DataColumn col1 = new DataColumn("Product name", typeof(string));
             DataColumn col2 = new DataColumn("Retail price", typeof(double));
             dt.Columns.Add(col1);
             dt.Columns.Add(col2);
             this.dataGridView1.DataSource = dt;
-            if (listBox1.SelectedIndex != -1)
+
+
+
+            if (x != -1)
             {
-                for (int i = 0; i < CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts; i++)
+                for (int i = 0; i < CataInitial.catalogues[x].numberOfProducts; i++)
                 {
-                    try
-                    {
-                        dt.Rows.Add("{0}", "{1}", CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName,
-                            CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
-                    }
-                    catch { }
+                    DataRow row = dt.NewRow();
+                    row["Product name"] = CataInitial.catalogues[x].products[i].ProductName;
+                    row["Retail price"] = CataInitial.catalogues[x].products[i].RetailPrice;
+                    // dt.Rows.Add("{0}", "{1}", CataInitial.catalogues[listBox1.SelectedIndex].products[i].ProductName,
+                    //   CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
+                    dt.Rows.Add(row);
                     //CataInitial.catalogues[listBox1.SelectedIndex].products[i].RetailPrice);
+
 
                 }
             }
-
+        
+        
         }
-       
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -150,18 +159,36 @@ namespace n9199349_assignment2
             listBox1.Items.Remove(listBox1.SelectedIndex);
             CataInitial.catalogues.RemoveAt(listBox1.SelectedIndex);
             CataInitial.NumberOfCatalogue--;
+            refreshCata();
             
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (this.dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                DataRowView drv = dataGridView1.SelectedRows[0].DataBoundItem as DataRowView;
-                drv.Delete();                   
+                CataInitial.catalogues[listBox1.SelectedIndex].products.RemoveAt(dataGridView1.CurrentRow.Index);
+
+                if (CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts > 0)
+                {
+                    CataInitial.catalogues[listBox1.SelectedIndex].numberOfProducts--;
+                }
             }
-            
-            CataInitial.catalogues[listBox1.SelectedIndex].products.RemoveAt(dataGridView1.CurrentRow.Index);
+            catch { }
+            if (this.dataGridView1.SelectedRows.Count > 0)
+            { 
+                //MessageBox.Show(dataGridView1.CurrentRow.Index.ToString());
+                DataRowView drv = dataGridView1.SelectedRows[0].DataBoundItem as DataRowView;
+                drv.Delete();     
+              
+            }
+            try
+            {
+                ProductRefresh(listBox1.SelectedIndex);
+            }
+            catch { }
+           
+           
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -176,6 +203,12 @@ namespace n9199349_assignment2
 
                 }
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
         }
     }
 }
