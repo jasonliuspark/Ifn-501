@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace n9199349_assignment2
 {
-  public class xml
+  /*public class xml
     {  
         string MyXmlfilePath = "c:\\Inventory_output.xml";
         public void xml(int x,string y)
@@ -34,4 +34,5 @@ namespace n9199349_assignment2
   
   
   }
+   * */
 }
