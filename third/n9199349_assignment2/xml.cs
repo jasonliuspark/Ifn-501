@@ -4,20 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.IO;
 
 namespace n9199349_assignment2
 {
-  /*public class xml
+  public class xml
     {  
-        string MyXmlfilePath = "c:\\Inventory_output.xml";
-        public void xml(int x,string y)
-        { 
-          XmlDocument myXmlDoc=new XmlDocument();
-          XmlElement rootElement = myXmlDoc.CreateElement("Products");
-          myXmlDoc.AppendChild(rootElement);
        
-          XmlElement [] LevelElement1= new XmlElement();
-
+        public void xml(int x,string y)
+        {
+            DirectoryInfo i = new DirectoryInfo(Path.GetFullPath(".."));
+            string dir;
+            dir = i.Parent.ToString() + "Inventory.xml";
+            XmlDocument myXmlDoc = new XmlDocument();
+           for()
+           {
+           XmlElement rootElement = myXmlDoc.CreateElement("Products");
+           myXmlDoc.AppendChild(rootElement);
+           }
+          myXmlDoc.Save(dir);
           //LevelElement1[x].SetAttribute("Products",);
         }
        public  void genXML(int x,int y,string a,string b)
@@ -34,5 +39,5 @@ namespace n9199349_assignment2
   
   
   }
-   * */
+    
 }
