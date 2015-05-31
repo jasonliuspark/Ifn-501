@@ -17,10 +17,11 @@ namespace n9199349_assignment2
             string dir;
             dir = i.Parent.ToString() + "Inventory.xml";
             XmlDocument myXmlDoc = new XmlDocument();
-           for()
+           foreach(object n in CataInitial.catalogues)
            {
            XmlElement rootElement = myXmlDoc.CreateElement("Products");
            myXmlDoc.AppendChild(rootElement);
+              
            }
           myXmlDoc.Save(dir);
           //LevelElement1[x].SetAttribute("Products",);
