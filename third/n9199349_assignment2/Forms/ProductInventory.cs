@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 using System.Xml;
+using System.IO;
 
 namespace n9199349_assignment2
 {
@@ -211,5 +212,45 @@ namespace n9199349_assignment2
             
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string message;
+            string i = System.AppDomain.CurrentDomain.BaseDirectory;
+            string dir;
+            dir = i + "Inventory.xml";
+           // dir = "c:\test.xml";
+            XmlDocument myXmlDoc = new XmlDocument();
+            XmlDeclaration dec = myXmlDoc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            myXmlDoc.AppendChild(dec);
+            XmlElement rootElement = myXmlDoc.CreateElement("Products");
+            myXmlDoc.AppendChild(rootElement);
+            
+            for (int n=0;n<CataInitial.NumberOfCatalogue;n++)
+            {   
+                for (int m=0;m<CataInitial.catalogues[n].numberOfProducts;m++)
+                {
+                
+                XmlElement child1 = myXmlDoc.CreateElement("Product");
+                child1.SetAttribute("catalgue",CataInitial.catalogues[n].catalogueName);
+                rootElement.AppendChild(child1);
+                XmlElement child2= myXmlDoc.CreateElement("ProductName");
+                child2.InnerText = CataInitial.catalogues[n].products[m].ProductName;
+                  child1.AppendChild(child2);
+                   XmlElement child3=myXmlDoc.CreateElement("ProductPrice");
+                    child3.InnerText=CataInitial.catalogues[n].products[m].RetailPrice.ToString();
+                    child1.AppendChild(child3);
+                
+
+               
+                }
+            }
+               myXmlDoc.Save(@dir);
+              
+               message = "the inventory has been stored under"+i;
+               MessageBox.Show(message);
+            }
+            
+        }
     }
-}
+
