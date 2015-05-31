@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Products>
+  <catalist>1</catalist>
+  <catalist>2</catalist>
   <Product catalgue="1">
-    <ProductName>2</ProductName>
-    <ProductPrice>2</ProductPrice>
+    <ProductName>1</ProductName>
+    <ProductPrice>1</ProductPrice>
+  </Product>
+  <Product catalgue="2">
+    <ProductName>fsfa</ProductName>
+    <ProductPrice>2323</ProductPrice>
   </Product>
 </Products>

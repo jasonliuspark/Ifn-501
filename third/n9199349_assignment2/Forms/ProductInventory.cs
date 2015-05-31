@@ -225,6 +225,13 @@ namespace n9199349_assignment2
             myXmlDoc.AppendChild(dec);
             XmlElement rootElement = myXmlDoc.CreateElement("Products");
             myXmlDoc.AppendChild(rootElement);
+           // XmlElement catalist = myXmlDoc.CreateElement("catalist");
+            /*for (int l = 0; l < CataInitial.NumberOfCatalogue;l++ )
+            {
+                XmlElement catalist = myXmlDoc.CreateElement("catalist");
+                catalist.InnerText=(CataInitial.catalogues[l].catalogueName);
+                myXmlDoc.AppendChild(catalist);
+            }*/
             
             for (int n=0;n<CataInitial.NumberOfCatalogue;n++)
             {   
@@ -250,6 +257,30 @@ namespace n9199349_assignment2
                message = "the inventory has been stored under"+i;
                MessageBox.Show(message);
             }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog file1 = new OpenFileDialog();
+            file1.Filter = "*.xml";
+            if (file1.ShowDialog() == DialogResult.OK)
+            {
+                string b;
+                string a="";
+                XmlDocument doc = new XmlDocument();
+                XmlElement root = doc.DocumentElement;
+                XmlNodeList products = root.GetElementsByTagName("Product");
+                
+                foreach(XmlNode node in products)
+                {
+
+                  
+                   
+                
+                }
+             
+            
+            }
+        }
             
         }
     }

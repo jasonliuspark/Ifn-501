@@ -41,6 +41,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cataInitialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cataInitialBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -163,11 +164,22 @@
             // 
             this.cataInitialBindingSource.DataSource = typeof(n9199349_assignment2.CataInitial);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(921, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(168, 27);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Import Inventory";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // ProductInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 540);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource cataInitialBindingSource;
+        private System.Windows.Forms.Button button3;
     }
 }

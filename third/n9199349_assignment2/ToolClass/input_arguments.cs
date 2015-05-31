@@ -13,8 +13,8 @@ namespace n9199349_assignment2
             while (double.TryParse(x, out p) == false)
             {
                // Console.WriteLine("plese input the right number");
-                // break;
-                continue;
+                 break;
+                //continue;
             }
             
 
@@ -25,8 +25,8 @@ namespace n9199349_assignment2
             while (int.TryParse(x, out p) == false)
             {
                // Console.WriteLine("plese input the right number");
-                //break;
-                continue;
+                break;
+                //continue;
             }
             p = p - 1;
         }
