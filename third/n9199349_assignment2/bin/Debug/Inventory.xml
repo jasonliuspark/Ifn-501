@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Products>
-  <catalist>1</catalist>
-  <catalist>2</catalist>
-  <Product catalgue="1">
-    <ProductName>1</ProductName>
-    <ProductPrice>1</ProductPrice>
+  <Product catalgue="computer">
+    <ProductName>2</ProductName>
+    <ProductPrice>33</ProductPrice>
   </Product>
-  <Product catalgue="2">
-    <ProductName>fsfa</ProductName>
-    <ProductPrice>2323</ProductPrice>
+  <Product catalgue="computer">
+    <ProductName>2</ProductName>
+    <ProductPrice>0</ProductPrice>
+  </Product>
+  <Product catalgue="kitchenware">
+    <ProductName>2</ProductName>
+    <ProductPrice>2</ProductPrice>
+  </Product>
+  <Product catalgue="kitchenware">
+    <ProductName>0</ProductName>
+    <ProductPrice>0</ProductPrice>
   </Product>
 </Products>

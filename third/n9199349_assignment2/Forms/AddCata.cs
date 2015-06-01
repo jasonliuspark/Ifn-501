@@ -16,16 +16,16 @@ namespace n9199349_assignment2
 
     public partial class AddCata : Form
     {
+        
            public delegate void DoAction();
            public DoAction FatherRefresh;
         public AddCata()
         {
-            InitializeComponent();          
+            InitializeComponent();
             
             
-
-
         }
+     
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -41,6 +41,7 @@ namespace n9199349_assignment2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             ProductCatalogue catalogue = new ProductCatalogue(textBox1.Text);
             CataInitial.catalogues.Add(catalogue);
             CataInitial.NumberOfCatalogue++;

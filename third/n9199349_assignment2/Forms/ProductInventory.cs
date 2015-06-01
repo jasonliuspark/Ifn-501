@@ -16,14 +16,37 @@ namespace n9199349_assignment2
 
     public partial class ProductInventory : Form
     {
-       
+        public enum catas
+        {
+            fruit,
+            computer,
+            kitchenware,
+            dailycare
+
+        }
+
         public ProductInventory()
         { 
-           
+            
             InitializeComponent();
-            this.listBox1.MouseDoubleClick += new MouseEventHandler(Mouse_DoubleClick);
-         
 
+            load();
+            this.listBox1.MouseClick += new MouseEventHandler(Mouse_DoubleClick);
+            
+
+        }
+        public void load()
+        {
+
+            for (int i = 0; i < 4; i++)
+            {
+                ProductCatalogue catalogue = new ProductCatalogue(Enum.GetName(typeof(catas),i));
+                CataInitial.catalogues.Add(catalogue);
+                CataInitial.NumberOfCatalogue++;
+            
+            }
+            refreshCata();
+        
         }
         public void Mouse_DoubleClick(object sender,MouseEventArgs e)
         {
@@ -305,6 +328,11 @@ namespace n9199349_assignment2
              
             
             }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+           
+        }
         }
             
         }
