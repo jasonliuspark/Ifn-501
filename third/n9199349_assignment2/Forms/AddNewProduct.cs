@@ -52,9 +52,13 @@ namespace n9199349_assignment2
             try
             {  
                 input_arguments.DoubleInputArguement(textBox2.Text, out p);
-                CataInitial.catalogues[comboBox1.SelectedIndex].InsertProduct(textBox1.Text, p);
-                refresh(comboBox1.SelectedIndex);
-                this.Hide();
+                if (p != 0)
+                {
+                    CataInitial.catalogues[comboBox1.SelectedIndex].InsertProduct(textBox1.Text, p);
+                    refresh(comboBox1.SelectedIndex);
+                    this.Hide();
+                }
+              
             }
             catch { }
 
