@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace n9199349_assignment2
 {
@@ -13,8 +14,11 @@ namespace n9199349_assignment2
             while (double.TryParse(x, out p) == false)
             {
                // Console.WriteLine("plese input the right number");
-                 break;
+                 
+                MessageBox.Show("you need to key in right number");
                 //continue;
+                break;
+             
             }
             
 
@@ -25,8 +29,10 @@ namespace n9199349_assignment2
             while (int.TryParse(x, out p) == false)
             {
                // Console.WriteLine("plese input the right number");
-                break;
+                
+                MessageBox.Show("you need to key in right number");
                 //continue;
+                break;
             }
             p = p - 1;
         }

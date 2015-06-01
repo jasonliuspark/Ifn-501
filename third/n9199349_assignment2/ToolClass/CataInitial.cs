@@ -14,12 +14,8 @@ namespace n9199349_assignment2
       //  public static ProductCatalogue[] catalogues = new ProductCatalogue[10];
         public static List<ProductCatalogue> catalogues = new List<ProductCatalogue>();
         public static int NumberOfCatalogue = 0;
-
-          
-       static public void CreatXml( )
-        {
-            
-           
-        }
+        public static List<string> xmlretrival = new List<string> { };
+         public static int xmlretrivalCount=0;
+         public static List<string> retrivalresult = new List<string> { };
     }
 }

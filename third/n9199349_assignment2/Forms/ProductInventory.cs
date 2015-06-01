@@ -206,6 +206,7 @@ namespace n9199349_assignment2
                 }
             }
         }
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -261,27 +262,51 @@ namespace n9199349_assignment2
         private void button3_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog file1 = new OpenFileDialog();
-            file1.Filter = "*.xml";
+            file1.ShowDialog();
+           // file1.Filter = "*.xml";
+           
             if (file1.ShowDialog() == DialogResult.OK)
             {
-                string b;
-                string a="";
-                XmlDocument doc = new XmlDocument();
-                XmlElement root = doc.DocumentElement;
-                XmlNodeList products = root.GetElementsByTagName("Product");
-                
-                foreach(XmlNode node in products)
+                StreamReader sr = File.OpenText(file1.FileName);
+                while (sr.EndOfStream != true)
                 {
+                    string b;
+                    string a = "";
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(file1.FileName);
+                    XmlElement root = doc.DocumentElement;
+                    XmlNodeList products = root.GetElementsByTagName("Products");
 
-                  
-                   
-                
+                    foreach (XmlNode node in products)
+                    {
+
+                        CataInitial.xmlretrival[CataInitial.xmlretrivalCount] = ((XmlElement)node).GetAttribute("Product");
+                        CataInitial.xmlretrivalCount++;
+                    }
+
+                    retrival_handle.handle();
+                    retrival_handle.cata();
+                    for (int x = 0; x < CataInitial.NumberOfCatalogue; x++)
+                    {
+                        XmlNodeList xnl = doc.SelectNodes(CataInitial.catalogues[x].catalogueName);
+                        foreach (XmlNode xn in xnl)
+                        {
+                            CataInitial.catalogues[x].InsertProduct(doc.SelectSingleNode("ProductName").InnerText, double.Parse(doc.SelectSingleNode("ProductPrice").InnerText));
+                            CataInitial.catalogues[x].numberOfProducts++;
+                        }
+
+                    }
                 }
+
+             refreshCata();
+             
+               
+               }
              
             
             }
         }
             
         }
-    }
+    
 

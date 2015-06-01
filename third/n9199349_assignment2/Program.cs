@@ -17,7 +17,7 @@ namespace n9199349_assignment2
    public class Program
     {
 
-       
+       [STAThread]
         static void Main(string[] args)
         {
             Application.Run(new ProductInventory());
